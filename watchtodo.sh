@@ -51,7 +51,7 @@ function watchtodo.recieve {
       pre_pwd=$(cat ~/.watchtodo/pwd)
       pwd=$(cat ~/.watchtodo/pwd)
       [ -z "$pre_pid" ] || kill $pre_pid
-      watchfile $pwd/$(cat ~/.watchtodo/filename || echo todo.txt) &
+      [ -f "$pwd/$(cat ~/.watchtodo/filename || echo todo.txt)" ] && watchfile $pwd/$(cat ~/.watchtodo/filename || echo todo.txt) &
       readonly pre_pid=$!
     fi
     sleep 1
