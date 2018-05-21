@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash -i
+#!/usr/local/bin/bash
 #
 # watchtodo -- watch todo on current directory.
 #
@@ -28,7 +28,6 @@ function watchtodo.start {
   export PS1="${old_PS1}\$(echo \\$(pwd) >~/.watchtodo/pwd 2>/dev/null)" || return 1
   return 0
 }
-echo $PS1
 
 # reset PS1 to previous one
 # @return 0 success
