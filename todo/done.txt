@@ -1,0 +1,1 @@
+x 2018-05-21 add installation to set PS1 in order to echo $(pwd)
