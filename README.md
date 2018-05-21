@@ -40,6 +40,14 @@ $ watchtodo recieve
 
 # Installation
 
+## for all types of installation
+
+  Please set your PS1 to output $(pwd) to specific file so that `watchtodo recieve` can know where you are now.
+
+  ```
+  export PS1="${PS1} \$(echo \$(pwd) >~/.watchtodo/pwd 2>/dev/null)"
+  ```
+
 ## homebrew
 
 ## bpkg
