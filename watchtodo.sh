@@ -40,7 +40,8 @@ function watchtodo.stop {
 # check ~/.watchtodo/pwd, and display todo.txt under there
 function watchtodo.recieve {
   [ -f "~/.watchtodo/flag" ] && echo "watchtodo already running" >2
-  # if ~/.watchtodo/flag is disappeared, finish this roop
+  touch ~/.watchtodo/flag
+  # if ~/.watchtodo/flag is disappeared, finish this loop
   while [ -f ~/.watchtodo/flag ];do
     # 1. Check if current working directory is changed.
     # 2. if changed, kill previous watchfile process (if exists)
@@ -53,6 +54,7 @@ function watchtodo.recieve {
     fi
     sleep 1
   done
+  rm ~/.watchtodo/flag
 }
 
 
