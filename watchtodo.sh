@@ -52,7 +52,7 @@ function watchtodo.recieve {
       pwd=$(cat ~/.watchtodo/pwd)
       [ -z "$pre_pid" ] || kill $pre_pid
       watchfile $pwd/$(cat ~/.watchtodo/filename || echo todo.txt) &
-      pre_pid=$!
+      readonly pre_pid=$!
     fi
     sleep 1
   done
