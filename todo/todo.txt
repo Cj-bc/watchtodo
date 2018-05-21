@@ -1,0 +1,5 @@
+
+(A) how to set PS1 by script itself
+add test script @feature
+is it needed to make daemon?
+(A) add installation to set PS1 in order to echo $(pwd)
