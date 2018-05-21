@@ -48,6 +48,8 @@ function watchtodo.recieve {
     # 3. start new watchfile process on background
     # 4, Get process ID of watchfile
     if [ "$pre_pwd" != "$(cat ~/.watchtodo/pwd)" ]; then
+      pre_pwd=$(cat ~/.watchtodo/pwd)
+      pwd=$(cat ~/.watchtodo/pwd)
       [ -z "$pre_pid" ] || kill $pre_pid
       watchfile $pwd/$(cat ~/.watchtodo/filename || echo todo.txt) &
       pre_pid=$!
