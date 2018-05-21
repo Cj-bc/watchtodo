@@ -1,4 +1,8 @@
 
 (A) how to set PS1 by script itself
-add test script @feature
+(B) add test script @feature +v0.3.0
 is it needed to make daemon?
+
+(A) set a flag when `watchtodo.recieve` is called and watchfile is not run yet @inneed @recieve +v0.2.0
+
+support multi running @feature +v2.0.0
