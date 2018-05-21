@@ -1,0 +1,4 @@
+
+(A) how to set PS1 by script itself
+add test script @feature
+is it needed to make daemon?
