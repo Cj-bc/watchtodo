@@ -68,6 +68,8 @@ function watchtodo.recieve {
       if [ -f "$pwd/$(cat ~/.watchtodo/filename || echo todo.txt)" ]; then
         watchfile $pwd/$(cat ~/.watchtodo/filename || echo todo.txt) &
         readonly pre_pid=$!
+      else
+        echo "file: $(cat ~/.watchtodo/filename || echo todo.txt) dosn't exist here."
       fi
     fi
     sleep 1
