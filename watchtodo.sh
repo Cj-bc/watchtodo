@@ -29,6 +29,27 @@ function watchtodo.file {
 }
 
 
+# remove flag.
+# @param <string path of flag>
+# @return 0 success
+# @return 71 couldn't remove flag
+# @return 72 flag was not exist
+function watchtodo.rmflag {
+  # 1. check whether flag exists
+  # 2. try to remove flag.
+  # 3. If failed to remove, try for 10 times.
+  local flagfile=$1
+  [-f "$flagfile" ] || echo "Flag: $flagfile is not exist" && return $EX_OSFILE
+  while ! ${success?:-1} && [ $i -lt 10 ]; do
+    rm $flagfile
+    local success?=$?
+    local i=$i+1
+  done
+  [ $success? -ne 0 ] && echo "Couldn't remove the flag: $flagfile" return $EX_OSERR
+
+  return 0
+}
+
 # start watchtodo. Change PS1 to get pwd
 # @return 0 success
 function watchtodo.start {
