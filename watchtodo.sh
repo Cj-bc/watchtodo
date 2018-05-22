@@ -92,7 +92,15 @@ function watchtodo.recieve {
 }
 
 
+# finish watchtodo
+function watchtodo.end {
+  watchtodo.rmflag ~/.watchtodo/flag
+  trap - SIGKILL
+  exit 0
+}
 
+
+trap watchtodo.end SIGKILL
 
 case $1 in
   "start" | "stop" | "recieve" ) watchtodo.$1;;
