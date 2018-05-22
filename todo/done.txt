@@ -1,1 +1,3 @@
 x 2018-05-21 add installation to set PS1 in order to echo $(pwd)
+x 2018-05-22 watchtodo.flag @feature
+x 2018-05-22 set a flag when `watchtodo.recieve` is called and watchfile is not run yet @inneed @recieve +v0.2.0
