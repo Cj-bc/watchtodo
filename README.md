@@ -25,12 +25,6 @@ If you don't use 'todo.txt' for todo file, please set it:
 $ watchtodo filename <your todo.txt file name>
 ```
 
-1. In your working pane, run:
-
-```bash
-$ watchtodo start
-```
-
 2. In non working pane(which todo contents will be displayed), run:
 
 ```bash

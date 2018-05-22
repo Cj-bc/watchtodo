@@ -50,22 +50,6 @@ function watchtodo.rmflag {
   return 0
 }
 
-# start watchtodo. Change PS1 to get pwd
-# @return 0 success
-function watchtodo.start {
-  old_PS1=$(echo $PS1)
-  watchtodo.file oldPS1 $PS1
-  export PS1="${old_PS1}\$(echo \\$(pwd) >~/.watchtodo/pwd 2>/dev/null)" || return 1
-  return 0
-}
-
-# reset PS1 to previous one
-# @return 0 success
-function watchtodo.stop {
-  export PS1=$(cat ~/.watchtodo/oldPS1)
-  return 0
-}
-
 
 # check ~/.watchtodo/pwd, and display todo.txt under there
 function watchtodo.recieve {
