@@ -10,6 +10,12 @@
 # This software is released under MIT License.
 
 
+# see detail: /usr/include/sysexits.h
+EX_OSFILE=72
+EX_OSERR=71
+EX_OK=0
+
+
 # treat functions related with files.
 # @param <string command>
 function watchtodo.file {
@@ -18,7 +24,10 @@ function watchtodo.file {
   case $1 in
     "filename" | "oldPS1" ) echo $2 > ~/.watchtodo/$1;;
   esac
+
+  return 0
 }
+
 
 # start watchtodo. Change PS1 to get pwd
 # @return 0 success
