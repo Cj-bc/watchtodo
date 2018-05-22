@@ -52,6 +52,7 @@ function watchtodo.rmflag {
 
 
 # check ~/.watchtodo/pwd, and display todo.txt under there
+# @return 0 success
 function watchtodo.recieve {
   [ -f "~/.watchtodo/flag" ] && echo "watchtodo already running" >2 && exit $EX_SOFTWARE
   watchtodo.file flag ""
