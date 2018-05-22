@@ -22,7 +22,7 @@ function watchtodo.file {
 
   [ -d "~/.watchtodo" ] && mkdir ~/.watchtodo
   case $1 in
-    "filename" | "oldPS1" ) echo $2 > ~/.watchtodo/$1;;
+    "filename" | "flag" ) echo $2 > ~/.watchtodo/$1;;
   esac
 
   return 0
@@ -87,6 +87,6 @@ function watchtodo.end {
 trap watchtodo.end SIGKILL
 
 case $1 in
-  "start" | "stop" | "recieve" ) watchtodo.$1;;
+  "recieve" ) watchtodo.$1;;
   "filename" ) watchtodo.file filename $2;;
 esac
