@@ -1,6 +1,6 @@
 (A) how to set PS1 by script itself @feature
 (B) add test script @feature +v0.3.0
-is it needed to make daemon?
 support multi running @feature +v2.0.0
 support tty selection @feature
-include watchfile(as submodule) and enable to use it instead installed watchfile @feature
+include watchfile(as submodule) and enable to use it instead installed watchfile @feature +v0.4.0
+(X) support todo-number @feature
