@@ -53,8 +53,8 @@ function watchtodo.rmflag {
 
 # check ~/.watchtodo/pwd, and display todo.txt under there
 function watchtodo.recieve {
-  touch ~/.watchtodo/flag
   [ -f "~/.watchtodo/flag" ] && echo "watchtodo already running" >2 && exit $EX_SOFTWARE
+  watchtodo.file flag ""
   # if ~/.watchtodo/flag is disappeared, finish this loop
   while [ -f ~/.watchtodo/flag ];do
     # 1. Check if current working directory is changed.
@@ -72,7 +72,7 @@ function watchtodo.recieve {
     fi
     sleep 1
   done
-  rm ~/.watchtodo/flag
+  watchtodo.rmflag ~/.watchtodo/flag
 }
 
 
