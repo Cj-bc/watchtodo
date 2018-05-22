@@ -14,7 +14,7 @@
 EX_OSFILE=72
 EX_OSERR=71
 EX_OK=0
-
+EX_SOFTWARE=70
 
 # treat functions related with files.
 # @param <string command>
@@ -39,13 +39,13 @@ function watchtodo.rmflag {
   # 2. try to remove flag.
   # 3. If failed to remove, try for 10 times.
   local flagfile=$1
-  [-f "$flagfile" ] || echo "Flag: $flagfile is not exist" && return $EX_OSFILE
+  [-f "$flagfile" ] || echo "Flag: $flagfile is not exist" >2 && exit $EX_OSFILE
   while ! ${success?:-1} && [ $i -lt 10 ]; do
     rm $flagfile
     local success?=$?
     local i=$i+1
   done
-  [ $success? -ne 0 ] && echo "Couldn't remove the flag: $flagfile" return $EX_OSERR
+  [ $success? -ne 0 ] && echo "Couldn't remove the flag: $flagfile" >2 && exit $EX_OSERR
 
   return 0
 }
@@ -53,8 +53,8 @@ function watchtodo.rmflag {
 
 # check ~/.watchtodo/pwd, and display todo.txt under there
 function watchtodo.recieve {
-  [ -f "~/.watchtodo/flag" ] && echo "watchtodo already running" >2
   touch ~/.watchtodo/flag
+  [ -f "~/.watchtodo/flag" ] && echo "watchtodo already running" >2 && exit $EX_SOFTWARE
   # if ~/.watchtodo/flag is disappeared, finish this loop
   while [ -f ~/.watchtodo/flag ];do
     # 1. Check if current working directory is changed.
