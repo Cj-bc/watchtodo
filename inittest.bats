@@ -34,8 +34,23 @@ function setup {
   [ "$(cat ~/watchtodo/filename)" = "todo/todo.txt" ]
 }
 
-@test ""
 
+# test watchtodo.recieve
+# 1. Move under tempdir
+# 2. Check stdout
+# 3. Move to another tempdir
+# 4. Check stdout
+# 5. Move to $BATS_TMPDIR which doesn't have 'todo' dir
+# 6. Check stdout
+@test "'watchtodo recieve' test" {
+  cd $BATS_TMPDIR/dev1
+  run watchtodo recieve
+  [ "${lines[0]}" = "here's under dev1" ]
+  cd $BATS_TMPDIR/dev2
+  [ "${lines[0]}" = "here's under dev2" ]
+  cd $BATS_TMPDIR
+  [ "${lines[0]}" = "file: todo/todo.txt dosn't exist here." ]
+}
 
 function teardown {
   [ -d ~/watchtodo.backup ] && mv ~/.watchtodo.backup ~/.watchtodo
