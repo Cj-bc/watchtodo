@@ -32,4 +32,5 @@ function setup {
 
 function teardown {
   [ -d ~/watchtodo.backup ] && mv ~/.watchtodo.backup ~/.watchtodo
+  rm -rf $BATS_TMPDIR
 }
