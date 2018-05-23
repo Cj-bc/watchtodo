@@ -1,0 +1,9 @@
+{
+  "name": "watchtodo",
+  "version": "0.3.0",
+  "description": "watch todo on your directory, in other pane in tmux",
+  "global": "1",
+  "install": "install -b watchtodo.sh ${PREFIX:-/usr/local}/bin/watchtodo",
+  "scripts": [ "watchtodo.sh" ]
+}
+
