@@ -8,8 +8,15 @@
 
 
 
+# setup environment
+# 1. Backup ~/.watchtodo
+# 2. Make 2 temporary directory and make 'todo' under each dir
+# 3. Make todo.txt for each dir
 function setup {
   [ -d ~/watchtodo ] && mv ~/.watchtodo ~/.watchtodo.backup
+  mkdir -p $BATS_TMPDIR/{dev1,dev2}/todo
+  echo "here's uner dev1" > $BATS_TMPDIR/dev1/todo/todo.txt
+  echo "here's uner dev2" > $BATS_TMPDIR/dev2/todo/todo.txt
 }
 
 
