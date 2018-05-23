@@ -20,9 +20,16 @@ function setup {
 }
 
 
+# test watchtodo.filename
+# 1. Set filename to "todo/todo.txt"
+# 2. Check status
+# 3. Check if directory is exist
+# 4. Check if "filename" is exist
+# 5. Check if the contents of "filename" is correct
 @test "'watchtodo filename' test" {
   run watchtodo filename todo/todo.txt
   [ $status -eq 0 ]
+  [ -d ~/watchtodo ]
   [ -f ~/watchtodo/filename ]
   [ "$(cat ~/watchtodo/filename)" = "todo/todo.txt" ]
 }
