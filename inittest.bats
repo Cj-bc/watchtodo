@@ -52,6 +52,14 @@ function setup {
   [ "${lines[0]}" = "file: todo/todo.txt dosn't exist here." ]
 }
 
+# test run watchtodo.recieve when another one is running -> should be failed
+@test "run `watchtodo recieve` twice -> fail" {
+  touch ~/.watchtodo/flag
+  run watchtodo recieve
+  [ $status -eq 70 ]
+}
+
+
 function teardown {
   [ -d ~/watchtodo.backup ] && mv ~/.watchtodo.backup ~/.watchtodo
   rm -rf $BATS_TMPDIR
