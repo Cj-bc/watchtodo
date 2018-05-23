@@ -15,8 +15,8 @@
 function setup {
   [ -d ~/watchtodo ] && mv ~/.watchtodo ~/.watchtodo.backup
   mkdir -p $BATS_TMPDIR/{dev1,dev2}/todo
-  echo "here's uner dev1" > $BATS_TMPDIR/dev1/todo/todo.txt
-  echo "here's uner dev2" > $BATS_TMPDIR/dev2/todo/todo.txt
+  echo "here's under dev1" > $BATS_TMPDIR/dev1/todo/todo.txt
+  echo "here's under dev2" > $BATS_TMPDIR/dev2/todo/todo.txt
 }
 
 
