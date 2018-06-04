@@ -2,9 +2,7 @@
 #
 # watchtodo -- watch todo on current directory.
 #
-# usage:  watchtodo start
-#         watchtodo stop
-#         watchtodo recieve
+# usage:  watchtodo recieve
 #         watchtodo filename <todo-txt's file path(from current dir)>
 # copyright (c) 2018 Cj-bc
 # This software is released under MIT License.
