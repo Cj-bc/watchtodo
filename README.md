@@ -1,4 +1,4 @@
-# watchtodo -- watch todo on your directory, in other pane in tmux
+# watchtodo -- watch todo on your directory, in other tty
 
 this is wrapper of [watchfile](https://github.com/Cj-bc/watchfile) specialized in [todo-txt](https://github.com/todotxt/todo.txt).
 If you define your TODO_DIR to somewhere one place, this won't help you.
